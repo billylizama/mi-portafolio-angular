@@ -1,0 +1,13 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ¡Magia Responsiva! */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.section-title {
+    margin-top: 40px;
+    border-bottom: 2px solid #dd0031;
+    display: inline-block;
+    padding-bottom: 5px;
+}
