@@ -10,4 +10,5 @@ export class SobreMiComponent {
  nombre: string = 'Billy Lizama';
   profesion: string = 'Desarrollador Frontend';
   descripcion: string = 'Especializándome en Angular 19 para crear soluciones web de alto impacto.';
+  habilidades: string[] = ['Angular', 'TypeScript', 'JavaScript', 'Git & GitHub', 'SQL', 'Node.js'];
 }

@@ -2,4 +2,10 @@
   <h2>Sobre Mí</h2>
   <p>Hola, mi nombre es <strong>{{ nombre }}</strong>
   <p>Soy <strong>{{ profesion }}</strong> y estoy {{ descripcion }}</p>
+  <h3>Mis Habilidades Técnicas:</h3>
+<ul>
+  @for (skill of habilidades; track skill) {
+    <li>{{ skill }}</li>
+  }
+</ul>
 </div>

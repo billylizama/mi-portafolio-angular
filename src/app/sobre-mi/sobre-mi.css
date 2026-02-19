@@ -12,3 +12,19 @@ h2 {
     color: #dd0031;
     margin-top: 0;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+li {
+    background: #dd0031;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
