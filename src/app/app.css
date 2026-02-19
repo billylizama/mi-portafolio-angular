@@ -24,7 +24,7 @@
 .footer-content {
     max-width: 800px;       /* No queremos que el texto se pegue a los bordes */
     margin: 0 auto;         /* Centra el contenedor en la pantalla */
-    text-align: center;     /* Centra el texto */
+    text-align: center;     /* Centrar el texto */
     display: flex;          /* Usamos Flexbox */
     flex-direction: column; /* Apila el texto y los links uno sobre otro */
     gap: 10px;              /* Separa el nombre del "Hecho con Angular" */
