@@ -7,17 +7,13 @@
 <h2>Mis Proyectos</h2>
 
 <div class="projects-grid">
+    @for (p of misProyectos; track p.titulo) {
     <app-proyecto-card 
-    titulo="Abigail Fotografía" 
-    descripcion="Portafolio profesional para fotógrafa hecho en HTML/CSS."
-    enlace="https://billylizama.github.io/AbigailLizamaFotografia/">
+      [titulo]="p.titulo" 
+      [descripcion]="p.desc" 
+      [enlace]="p.link">
     </app-proyecto-card>
-
-    <app-proyecto-card 
-    titulo="Generador de Facturas" 
-    descripcion="Herramienta de gestión con lógica avanzada de JavaScript."
-    enlace="#">
-    </app-proyecto-card>
+  }
 </div>
 
 <footer class="main-footer">
