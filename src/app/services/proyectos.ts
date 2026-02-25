@@ -1,31 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http'; 
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectosService {
+  // 1. Inyectamos el "teléfono" para hablar con internet
+  private http = inject(HttpClient); 
+  
+  // 2. Esta es la dirección del servidor (API)
+  private apiUrl = 'https://jsonplaceholder.typicode.com/todos?_limit=5';
 
-  private listaProyectos = [
-    {
-      titulo: 'Abigail Fotografía',
-      desc: 'Portafolio profesional para fotógrafa hecho en HTML/CSS.',
-      link: 'https://billylizama.github.io/AbigailLizamaFotografia/'
-    },
-    {
-      titulo: 'TaskMaster Angular',
-      desc: 'Aplicación profesional creada con Angular 19 y Git Flow.',
-      link: 'https://billylizama.github.io/mi-portafolio-angular/'
-    },
-    {
-      titulo: 'Generador de Facturas',
-      desc: 'Lógica avanzada de JavaScript para gestión de cobros.',
-      link: '#'
-    }
-  ];
-
-  constructor() { }
-
-  obtenerProyectos() {
-    return this.listaProyectos;
+  // 3. Este método devuelve un "Observable" (un flujo de datos que llegará en el futuro)
+  obtenerProyectosDesdeAPI(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

@@ -7,11 +7,12 @@
 <h2>Mis Proyectos</h2>
 
 <div class="projects-grid">
-    @for (p of misProyectos; track p.titulo) {
+  <!-- Agregamos los paréntesis a misProyectos() porque es un Signal -->
+  @for (p of misProyectos(); track p.id) {
     <app-proyecto-card 
-      [titulo]="p.titulo" 
-      [descripcion]="p.desc" 
-      [enlace]="p.link">
+      [titulo]="p.title" 
+      [descripcion]="'Tarea automatizada ID: ' + p.id" 
+      [enlace]="'https://jsonplaceholder.typicode.com/todos/' + p.id">
     </app-proyecto-card>
   }
 </div>
