@@ -1,7 +1,20 @@
 <div class="about-wrapper">
 
   <div class="about-left">
-    <div class="avatar">BL</div>
+    <div class="avatar-wrapper">
+      <div class="avatar-ring"></div>
+      <div class="avatar">
+        <span>BL</span>
+        <svg class="avatar-bg" viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="17" height="17" patternUnits="userSpaceOnUse">
+              <path d="M 17 0 L 0 0 0 17" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="170" height="170" fill="url(#grid)"/>
+        </svg>
+      </div>
+    </div>
     <div class="stats">
       @for (stat of stats; track stat.label) {
         <div class="stat-item">
@@ -17,7 +30,32 @@
     <h2>Desarrollador Full Stack<br><em>orientado a resultados</em></h2>
     <p class="bio">{{ descripcion }}</p>
 
+    <div class="experience-container">
+      <h3 class="block-title">Experiencia</h3>
+      @for (exp of experiencia; track exp.empresa) {
+        <div class="exp-item">
+          <div class="exp-dot"></div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div class="exp-info">
+                <h4>{{ exp.cargo }}</h4>
+                <span class="exp-company">{{ exp.empresa }}</span>
+              </div>
+              <span class="exp-period">{{ exp.periodo }}</span>
+            </div>
+            <p>{{ exp.descripcion }}</p>
+            <div class="exp-techs">
+              @for (t of exp.techs; track t) {
+                <span class="exp-tech">{{ t }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
     <div class="skills-container">
+      <h3 class="block-title">Habilidades</h3>
       @for (grupo of skills; track grupo.categoria) {
         <div class="skill-group">
           <h4>{{ grupo.categoria }}</h4>
