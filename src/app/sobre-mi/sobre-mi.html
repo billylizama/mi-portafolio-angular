@@ -1,5 +1,6 @@
 <div class="about-wrapper">
 
+  <!-- LEFT COLUMN -->
   <div class="about-left">
     <div class="avatar-wrapper">
       <div class="avatar-ring"></div>
@@ -25,48 +26,97 @@
     </div>
   </div>
 
+  <!-- RIGHT COLUMN -->
   <div class="about-right">
     <span class="section-label">Sobre Mí</span>
     <h2>Desarrollador Full Stack<br><em>orientado a resultados</em></h2>
     <p class="bio">{{ descripcion }}</p>
 
-    <div class="experience-container">
-      <h3 class="block-title">Experiencia</h3>
-      @for (exp of experiencia; track exp.empresa) {
-        <div class="exp-item">
-          <div class="exp-dot"></div>
-          <div class="exp-body">
-            <div class="exp-header">
-              <div class="exp-info">
-                <h4>{{ exp.cargo }}</h4>
-                <span class="exp-company">{{ exp.empresa }}</span>
+    <!-- EXPERIENCIA -->
+    <div class="block">
+      <h3 class="block-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        Experiencia
+      </h3>
+      <div class="timeline">
+        @for (exp of experiencia; track exp.empresa) {
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-body">
+              <div class="exp-header">
+                <div class="exp-info">
+                  <h4>{{ exp.cargo }}</h4>
+                  <span class="exp-company">{{ exp.empresa }}</span>
+                </div>
+                <span class="exp-period">{{ exp.periodo }}</span>
               </div>
-              <span class="exp-period">{{ exp.periodo }}</span>
+              <p>{{ exp.descripcion }}</p>
+              <div class="exp-techs">
+                @for (t of exp.techs; track t) {
+                  <span class="exp-tech">{{ t }}</span>
+                }
+              </div>
             </div>
-            <p>{{ exp.descripcion }}</p>
-            <div class="exp-techs">
-              @for (t of exp.techs; track t) {
-                <span class="exp-tech">{{ t }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- FORMACIÓN -->
+    <div class="block">
+      <h3 class="block-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Formación Académica
+      </h3>
+      <div class="edu-card">
+        <div class="edu-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-info">
+          <h4>{{ educacion.titulo }}</h4>
+          <span class="edu-uni">{{ educacion.institucion }}</span>
+        </div>
+        <span class="edu-period">{{ educacion.periodo }}</span>
+      </div>
+    </div>
+
+    <!-- CERTIFICACIONES -->
+    <div class="block">
+      <h3 class="block-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        Cursos y Certificaciones
+      </h3>
+      <div class="certs-grid">
+        @for (cert of certificaciones; track cert.nombre) {
+          <div class="cert-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dd0031" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="cert-name">{{ cert.nombre }}</span>
+            <span class="cert-year" [class.en-curso]="cert.estado === 'En curso'">{{ cert.estado }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="block">
+      <h3 class="block-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Habilidades
+      </h3>
+      <div class="skills-container">
+        @for (grupo of skills; track grupo.categoria) {
+          <div class="skill-group">
+            <h4>{{ grupo.categoria }}</h4>
+            <div class="skill-pills">
+              @for (item of grupo.items; track item) {
+                <span class="pill">{{ item }}</span>
               }
             </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </div>
 
-    <div class="skills-container">
-      <h3 class="block-title">Habilidades</h3>
-      @for (grupo of skills; track grupo.categoria) {
-        <div class="skill-group">
-          <h4>{{ grupo.categoria }}</h4>
-          <div class="skill-pills">
-            @for (item of grupo.items; track item) {
-              <span class="pill">{{ item }}</span>
-            }
-          </div>
-        </div>
-      }
-    </div>
   </div>
 
 </div>
