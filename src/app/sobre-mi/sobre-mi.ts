@@ -7,15 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './sobre-mi.css',
 })
 export class SobreMiComponent {
- nombre: string = 'Billy Lizama';
-  profesion: string = 'Desarrollador Frontend';
-  descripcion: string = 'Especializado en Angular y TypeScript para crear soluciones web modernas y de alto impacto.';
-  habilidades: string[] = ['Angular', 'TypeScript', 'JavaScript', 'Git & GitHub', 'SQL', 'Node.js'];
-  // El "Estado": ¿se muestra el contacto o no?
-mostrarContacto: boolean = false;
+  descripcion =
+    'Apasionado por construir experiencias web modernas, accesibles y de alto rendimiento. Me especializo en arquitecturas Angular escalables y código limpio que sea fácil de mantener y escalar.';
 
-// La "Acción": una función para cambiar el estado
-alternarContacto() {
-  this.mostrarContacto = !this.mostrarContacto;
-}
+  skills: { categoria: string; items: string[] }[] = [
+    { categoria: 'Frontend', items: ['Angular 21', 'TypeScript', 'JavaScript', 'HTML5 & CSS3'] },
+    { categoria: 'Herramientas', items: ['Git & GitHub', 'Git Flow', 'VS Code', 'npm'] },
+    { categoria: 'Backend / DB', items: ['Node.js', 'Python', 'Flask', 'SQL'] },
+  ];
+
+  stats = [
+    { value: '4+', label: 'Proyectos completados' },
+    { value: '2+', label: 'Años de práctica' },
+    { value: '100%', label: 'Compromiso y calidad' },
+  ];
 }

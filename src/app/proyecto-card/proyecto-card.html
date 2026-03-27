@@ -1,5 +1,31 @@
-<div class="proyecto-box">
+<div class="card">
+  <div class="card-top">
+    <div class="card-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/>
+        <polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <div class="card-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
   <h4>{{ titulo }}</h4>
   <p>{{ descripcion }}</p>
-  <a [href]="enlace" target="_blank">Ver Proyecto</a>
+
+  @if (techs.length > 0) {
+    <div class="tech-stack">
+      @for (tech of techs; track tech) {
+        <span class="tech-tag">{{ tech }}</span>
+      }
+    </div>
+  }
+
+  <a [href]="enlace" target="_blank" class="card-link">
+    Ver Proyecto
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17L17 7M17 7H7M17 7v10"/>
+    </svg>
+  </a>
 </div>

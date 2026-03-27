@@ -1,32 +1,125 @@
-<header class="hero">
+<!-- NAVBAR -->
+<nav class="navbar" [class.scrolled]="navScrolled">
+  <div class="nav-inner">
+    <span class="nav-logo">BL<span class="dot">.</span></span>
+    <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre Mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="mailto:abnerlizama10@gmail.com" class="nav-cta">Contáctame</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="hero-bg">
+    <div class="decor decor-1"></div>
+    <div class="decor decor-2"></div>
+    <div class="decor decor-3"></div>
+  </div>
   <div class="hero-content">
-    <h1>Billy Lizama</h1>
-    <p class="hero-subtitle">Desarrollador Frontend · Angular · TypeScript</p>
-    <div class="hero-links">
-      <a href="https://github.com/billylizama" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/balh/" target="_blank">LinkedIn</a>
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Disponible para nuevas oportunidades
     </div>
+    <h1 class="hero-name">Billy Lizama</h1>
+    <p class="hero-role">Desarrollador Frontend</p>
+    <p class="hero-stack">
+      <strong>Angular</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<strong>TypeScript</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<strong>JavaScript</strong>
+    </p>
+    <p class="hero-desc">
+      Construyo interfaces web rápidas, accesibles y escalables.<br>
+      Apasionado por la arquitectura limpia y el código de calidad.
+    </p>
+    <div class="hero-actions">
+      <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+      <a href="https://github.com/billylizama" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="https://www.linkedin.com/in/balh/" target="_blank" class="btn btn-outline">LinkedIn</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </header>
 
-<app-sobre-mi></app-sobre-mi>
+<!-- SOBRE MÍ -->
+<section id="sobre-mi" class="about-section">
+  <app-sobre-mi></app-sobre-mi>
+</section>
 
-<section class="projects-section">
-  <h2 class="section-title">Mis Proyectos</h2>
-  <div class="projects-grid">
-    @for (p of misProyectos; track p.titulo) {
-      <app-proyecto-card
-        [titulo]="p.titulo"
-        [descripcion]="p.desc"
-        [enlace]="p.link">
-      </app-proyecto-card>
-    }
+<!-- PROYECTOS -->
+<section class="projects-section" id="proyectos">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag">Portafolio</span>
+      <h2 class="section-title">Mis Proyectos</h2>
+      <p class="section-desc">
+        Una selección de proyectos que reflejan mi experiencia técnica
+        y capacidad de resolver problemas reales.
+      </p>
+    </div>
+    <div class="projects-grid">
+      @for (p of misProyectos; track p.titulo) {
+        <app-proyecto-card
+          [titulo]="p.titulo"
+          [descripcion]="p.desc"
+          [enlace]="p.link"
+          [techs]="p.techs">
+        </app-proyecto-card>
+      }
+    </div>
   </div>
 </section>
 
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="section-container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="section-tag light">Contacto</span>
+        <h2>¿Tienes un proyecto<br>en mente?</h2>
+        <p>
+          Estoy disponible para posiciones full-time, freelance o proyectos de
+          consultoría. ¡Hablemos y construyamos algo juntos!
+        </p>
+      </div>
+      <div class="contact-right">
+        <a href="mailto:abnerlizama10@gmail.com" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          abnerlizama10&#64;gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/balh/" target="_blank" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          linkedin.com/in/balh
+        </a>
+        <a href="https://github.com/billylizama" target="_blank" class="contact-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+          github.com/billylizama
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="main-footer">
-  <div class="footer-content">
-    <p>&copy; 2026 Billy Lizama Herrera — Desarrollador Frontend Angular</p>
-    <span>Hecho con Angular 21</span>
+  <div class="footer-inner">
+    <span class="footer-logo">BL<span class="dot">.</span></span>
+    <p>&copy; 2026 Billy Lizama Herrera &mdash; Desarrollador Frontend Angular</p>
+    <div class="footer-links">
+      <a href="https://github.com/billylizama" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/balh/" target="_blank">LinkedIn</a>
+    </div>
   </div>
 </footer>
