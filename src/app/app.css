@@ -129,6 +129,7 @@
   position: relative;
   z-index: 1;
   animation: fadeUp 0.9s ease forwards;
+  padding-bottom: 80px;
 }
 
 @keyframes fadeUp {
@@ -455,6 +456,10 @@
   transition: color 0.2s;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
   padding-bottom: 2px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hero-live-link:hover {
@@ -558,5 +563,16 @@
 
   .hero-live-link {
     font-size: 0.7rem;
+    max-width: 260px;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero-scroll-hint {
+    display: none;
+  }
+
+  .hero-content {
+    padding-bottom: 20px;
   }
 }
