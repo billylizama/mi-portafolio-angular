@@ -8,12 +8,13 @@ import { Component } from '@angular/core';
 })
 export class SobreMiComponent {
   descripcion =
-    'Apasionado por construir experiencias web modernas, accesibles y de alto rendimiento. Me especializo en arquitecturas Angular escalables y código limpio que sea fácil de mantener y escalar.';
+    'Desarrollo aplicaciones web completas de principio a fin. En el frontend construyo interfaces modernas con Angular y TypeScript; en el backend diseño APIs y gestiono bases de datos con Python, Flask y SQL. Me enfoco en código limpio, arquitecturas escalables y soluciones que generan impacto real.';
 
   skills: { categoria: string; items: string[] }[] = [
     { categoria: 'Frontend', items: ['Angular 21', 'TypeScript', 'JavaScript', 'HTML5 & CSS3'] },
+    { categoria: 'Backend', items: ['Python', 'Flask', 'Node.js', 'REST APIs'] },
+    { categoria: 'Base de Datos', items: ['SQL', 'MySQL', 'PostgreSQL'] },
     { categoria: 'Herramientas', items: ['Git & GitHub', 'Git Flow', 'VS Code', 'npm'] },
-    { categoria: 'Backend / DB', items: ['Node.js', 'Python', 'Flask', 'SQL'] },
   ];
 
   stats = [
