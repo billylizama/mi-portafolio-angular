@@ -52,8 +52,8 @@ export class SobreMiComponent {
   };
 
   certificaciones = [
-    { nombre: 'Programación Web con JavaScript (Frontend)', estado: 'En curso' },
-    { nombre: 'Introducción al Desarrollo de Software', estado: 'En curso' },
+    { nombre: 'Programación Web con JavaScript (Frontend)', estado: '2025' },
+    { nombre: 'Introducción al Desarrollo de Software', estado: '2025' },
     { nombre: 'Especialización en Power BI Avanzado', estado: '2025' },
     { nombre: 'Especialización en Excel Avanzado', estado: '2025' },
     { nombre: 'Introducción a la Ciberseguridad', estado: '2024' },
