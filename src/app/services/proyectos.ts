@@ -7,23 +7,26 @@ export class ProyectosService {
 
   private listaProyectos = [
     {
+      titulo: 'EPG Sistema',
+      desc: 'Sistema web de gestión de presupuestos y planillas para una Escuela de Posgrado. Desarrollado con Python y Flask.',
+      link: 'https://github.com/billylizama/epg-sistema'
+    },
+    {
       titulo: 'Abigail Fotografía',
-      desc: 'Portafolio profesional para fotógrafa hecho en HTML/CSS.',
+      desc: 'Portafolio profesional para fotógrafa desarrollado en HTML y CSS.',
       link: 'https://billylizama.github.io/AbigailLizamaFotografia/'
     },
     {
       titulo: 'TaskMaster Angular',
-      desc: 'Aplicación profesional creada con Angular 19 y Git Flow.',
+      desc: 'Aplicación de gestión de tareas desarrollada con Angular 21 aplicando Git Flow.',
       link: 'https://billylizama.github.io/mi-portafolio-angular/'
     },
     {
       titulo: 'Generador de Facturas',
-      desc: 'Lógica avanzada de JavaScript para gestión de cobros.',
+      desc: 'Aplicación de lógica avanzada en JavaScript para gestión de cobros. En construcción.',
       link: '#'
     }
   ];
-
-  constructor() { }
 
   obtenerProyectos() {
     return this.listaProyectos;

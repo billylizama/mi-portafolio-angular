@@ -1,26 +1,32 @@
-<h1>Este es el inicio de mi carrera profesional - Por Billy Lizama</h1>
-<p>Proyecto base en Angular 19 </p>
+<header class="hero">
+  <div class="hero-content">
+    <h1>Billy Lizama</h1>
+    <p class="hero-subtitle">Desarrollador Frontend · Angular · TypeScript</p>
+    <div class="hero-links">
+      <a href="https://github.com/billylizama" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/balh/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</header>
 
 <app-sobre-mi></app-sobre-mi>
 
-<hr>
-<h2>Mis Proyectos</h2>
-
-<div class="projects-grid">
+<section class="projects-section">
+  <h2 class="section-title">Mis Proyectos</h2>
+  <div class="projects-grid">
     @for (p of misProyectos; track p.titulo) {
-    <app-proyecto-card 
-      [titulo]="p.titulo" 
-      [descripcion]="p.desc" 
-      [enlace]="p.link">
-    </app-proyecto-card>
-  }
-</div>
+      <app-proyecto-card
+        [titulo]="p.titulo"
+        [descripcion]="p.desc"
+        [enlace]="p.link">
+      </app-proyecto-card>
+    }
+  </div>
+</section>
 
 <footer class="main-footer">
-    <div class="footer-content">
-        <p>&copy; 2026 Billy Lizama Herrera - Desarrollador Frontend Angular</p>
-        <div class="footer-links">
-            <span>Hecho en Angular 19</span>
-        </div>
-    </div>
+  <div class="footer-content">
+    <p>&copy; 2026 Billy Lizama Herrera — Desarrollador Frontend Angular</p>
+    <span>Hecho con Angular 21</span>
+  </div>
 </footer>

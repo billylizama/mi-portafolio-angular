@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class SobreMiComponent {
  nombre: string = 'Billy Lizama';
   profesion: string = 'Desarrollador Frontend';
-  descripcion: string = 'Especializándome en Angular 19 para crear soluciones web de alto impacto.';
+  descripcion: string = 'Especializado en Angular y TypeScript para crear soluciones web modernas y de alto impacto.';
   habilidades: string[] = ['Angular', 'TypeScript', 'JavaScript', 'Git & GitHub', 'SQL', 'Node.js'];
   // El "Estado": ¿se muestra el contacto o no?
 mostrarContacto: boolean = false;
